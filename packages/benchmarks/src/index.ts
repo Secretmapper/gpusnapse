@@ -1,0 +1,1 @@
+export { genMatrix } from './genMatrix'

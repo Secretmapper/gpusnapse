@@ -16,13 +16,14 @@ export function generateSpikingVectors(c: SNP.Config, rules: RegExp[][]) {
     const n = c[j];
     let forRule = [];
     let hasValid = false;
-    for (let k = 0; k < rules[j].length; k++) {
+    const rulesLen = rules[j].length
+    for (let k = 0; k < rulesLen; k++) {
       const str = 'a'.repeat(n);
       const isValid = rules[j][k].test(str);
       hasValid = isValid || hasValid;
 
-      let zeroes = new Array(n);
-      for (let z = 0; z < n; ++z) {
+      let zeroes = new Array(rulesLen);
+      for (let z = 0; z < rulesLen; ++z) {
         zeroes[z] = z === k && isValid ? 1 : 0;
       }
 
@@ -32,8 +33,8 @@ export function generateSpikingVectors(c: SNP.Config, rules: RegExp[][]) {
     }
 
     if (!hasValid) {
-      let zeroes = new Array(n);
-      for (let z = 0; z < n; ++z)
+      let zeroes = new Array(rulesLen);
+      for (let z = 0; z < rulesLen; ++z)
         zeroes[z] = 0;
       forRule.push(zeroes);
     }

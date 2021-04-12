@@ -8,7 +8,7 @@
     "nohoist": []
   },
   "scripts": {
-    "dev": "concurrently --kill-others \"yarn workspace @gpusnapse/snp dev\" \"yarn workspace @gpusnapse/web dev\"",
+    "dev": "concurrently --kill-others \"yarn workspace @gpusnapse/snp dev\" \"yarn workspace @gpusnapse/web dev\" \"yarn workspace @gpusnapse/benchmarks dev\"",
     "precommit": "lint-staged"
   },
   "devDependencies": {

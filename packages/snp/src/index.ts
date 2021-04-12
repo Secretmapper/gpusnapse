@@ -1,6 +1,5 @@
+export { COMPUTATION } from './types'
 export { generateSpikingVectors } from './generateSpikingVectors'
 export { getConfig } from './getConfig'
-
-export function initialize() {
-  console.log('init')
-}
+export { getConfigGPU } from './getConfigGPU'
+export { getConfigCPU } from './getConfigCPU'
