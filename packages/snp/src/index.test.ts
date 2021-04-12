@@ -43,10 +43,10 @@ const matrices = [
 ]
 
 describe('getConfig', () => {
-  it('returns proper result matrix', () => {
+  it('returns proper result matrix withCPU', () => {
     for (let mIn of matrices) {
       const { c, s, m, results } = mIn
-      const configs = getConfig(c, s, m, COMPUTATION.GPU)
+      const configs = getConfig(c, s, m, COMPUTATION.CPU)
       expect(configs).toEqual(results.config)
     }
   })
@@ -60,7 +60,7 @@ describe('getConfig', () => {
 })
 
 describe('generateSpikingVectors', () => {
-  it('returns proper result matrix withGPU', () => {
+  it('returns all spiking vectors', () => {
     for (let mIn of matrices) {
       const { c, rules, results } = mIn
       const spikingVectors = generateSpikingVectors(c, rules)
