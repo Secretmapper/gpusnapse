@@ -1,0 +1,5 @@
+export var COMPUTATION;
+(function (COMPUTATION) {
+    COMPUTATION["CPU"] = "CPU";
+    COMPUTATION["GPU"] = "GPU";
+})(COMPUTATION || (COMPUTATION = {}));
